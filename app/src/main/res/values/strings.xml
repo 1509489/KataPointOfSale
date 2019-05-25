@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Kata: Point Of Sale</string>
+
+    <string name="enter_name_of_item">Enter Name of Item</string>
+    <string name="enter_item_price">Enter Price</string>
+    <string name="enter_quantity">Enter Quantity</string>
+    <string name="add_item">Add Item</string>
+    <string name="clear">Clear Results</string>
+    <string name="calculate_total">Calculate Total</string>
+    <string name="dash_line">Dash Line</string>
+    <string name="total_without_taxes">Total Without Taxes</string>
+    <string name="discount">Discount</string>
+    <string name="tax">Tax</string>
+    <string name="total">Total</string>
+
+    <string name="text_field_blank">Input fields cannot be left blank</string>
+    <string name="select_state">Select a state from the drop down</string>
+
+    <string-array name="states">
+        <item>Select State</item>
+        <item>UT</item>
+        <item>NV</item>
+        <item>TX</item>
+        <item>AL</item>
+        <item>CA</item>
+        <item>LA</item>
+    </string-array>
 </resources>
