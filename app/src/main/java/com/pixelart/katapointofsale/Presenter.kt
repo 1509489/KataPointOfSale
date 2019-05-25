@@ -65,4 +65,42 @@ class Presenter(private val view:Contract.View) : Contract.Presenter {
         }
         return 0.0
     }
+
+    private fun applyTax(state: String, subTotal: Double):Double{
+        val tax: Double
+        val taxRate: Double
+        when(state) {
+            "UT" -> {
+                taxRate = 0.0685
+                tax = subTotal * taxRate
+                return tax
+            }
+            "NV" -> {
+                taxRate = 0.08
+                tax = subTotal * taxRate
+                return tax
+            }
+            "TX" -> {
+                taxRate = 0.0625
+                tax = subTotal * taxRate
+                return tax
+            }
+            "AL" -> {
+                taxRate = 0.04
+                tax = subTotal * taxRate
+                return tax
+            }
+            "CA" -> {
+                taxRate = 0.0825
+                tax = subTotal * taxRate
+                return tax
+            }
+            "LA" -> {
+                taxRate = 0.04
+                tax = subTotal * taxRate
+                return tax
+            }
+        }
+        return 0.0
+    }
 }
