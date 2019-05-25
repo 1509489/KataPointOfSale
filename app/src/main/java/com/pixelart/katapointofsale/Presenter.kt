@@ -31,4 +31,38 @@ class Presenter(private val view:Contract.View) : Contract.Presenter {
         view.showItems("")
         view.showTotal("", "", "", "")
     }
+
+    private fun applyDiscount(subTotal: Double):Double{
+        val discountRate: Double
+        val discount: Double
+
+        when{
+            subTotal > 1000 ->{
+                discountRate = 0.03
+                discount = subTotal * discountRate
+                return discount
+            }
+            subTotal > 5000 ->{
+                discountRate = 0.05
+                discount = subTotal * discountRate
+                return discount
+            }
+            subTotal > 7000 ->{
+                discountRate = 0.07
+                discount = subTotal * discountRate
+                return discount
+            }
+            subTotal > 10000 ->{
+                discountRate = 0.10
+                discount = subTotal * discountRate
+                return discount
+            }
+            subTotal > 15000 ->{
+                discountRate = 0.15
+                discount = subTotal * discountRate
+                return discount
+            }
+        }
+        return 0.0
+    }
 }
