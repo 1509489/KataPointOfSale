@@ -4,6 +4,7 @@ import java.lang.StringBuilder
 
 class Presenter(private val view:Contract.View) : Contract.Presenter {
     private val items = ArrayList<Item>()
+    private var subTotal:Double = 0.0
 
     override fun addItem(name: String, price: Double, quantity: Int) {
         items.add(Item(name, price, quantity))
@@ -17,6 +18,7 @@ class Presenter(private val view:Contract.View) : Contract.Presenter {
                 item.name, item.quantity, item.price, totalPrice))
         }
         view.showItems(stringBuilder.toString())
+        subTotal += totalPrice
     }
 
     override fun calculateTotal(state: String) {
@@ -24,6 +26,9 @@ class Presenter(private val view:Contract.View) : Contract.Presenter {
     }
 
     override fun clearResults() {
-
+        items.clear()
+        subTotal = 0.0
+        view.showItems("")
+        view.showTotal("", "", "", "")
     }
 }
